@@ -1,0 +1,73 @@
+<!doctype html>
+
+<html class="no-js">
+<head>
+  <meta charset="utf-8">
+  <title>YellowJS</title>
+  <meta name="description" content="">
+  <meta name="author" content="Octave &amp; Octave">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+  <script>(function(a,b,c){if(c in b&&b[c]){var d,e=a.location,f=/^(a|html)$/i;a.addEventListener("click",function(a){d=a.target;while(!f.test(d.nodeName))d=d.parentNode;"href"in d&&(d.href.indexOf("http")||~d.href.indexOf(e.host))&&(a.preventDefault(),e.href=d.href)},!1)}})(document,window.navigator,"standalone")</script>
+
+  <link rel="stylesheet" href="css/application.css">
+
+</head>
+
+<body>
+
+  <div id="viewport"></div>
+  <div class="controls">
+    <span class="button" id="prev">&lt;</span>&nbsp;
+    <span class="button" id="next">&gt;</span>
+  </div>
+
+
+  <script id="tpl-title" type="text/x-template">
+    <div class="text-block align-center valign-center">
+      <h1 class="statement">{{title}}</h1>
+    </div>
+  </script>
+
+  <script id="tpl-statement" type="text/x-template">
+    <div class="text-block valign-center">
+      <h3 class="blue">{{intro}}</h3>
+      <h1 class="statement">{{{statement}}}</h1>
+    </div>
+  </script>
+
+  <script id="tpl-statement-pic" type="text/x-template">
+    <div class="text-block align-center valign-center">
+      <h3>{{intro}}</h3>
+      <h1 class="statement">{{{statement}}}</h1>
+      <img class="stmt-pic" src="{{picSrc}}">
+    </div>
+  </script>
+
+  <script id="tpl-list" type="text/x-template">
+    <h2>{{title}}</h2>
+    <div class="text-block valign-center">
+      <ul class="bullets">
+      {{#bullets}}
+        <li>{{{statement}}}</li>
+      {{/bullets}}
+      </ul>
+    </div>
+  </script>
+
+  <script src="js/libs/helper.js"></script>
+
+  <script src="js/libs/yellowjs-0.4-n.js"></script>
+
+  <script src="js/data.js"></script>
+  <script src="js/app.js"></script>
+
+  <script>
+    MBP.scaleFix();
+  </script>
+
+</body>
+</html>

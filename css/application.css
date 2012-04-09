@@ -1,0 +1,216 @@
+/**** RESET CSS ****/
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+q, blockquote {
+  quotes: none;
+}
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+a img {
+  border: none;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/**** END ****/
+
+
+@font-face {
+    font-family: 'FrutigerLTStd45Light';
+    src: url('../assets/fonts/frutigerltstd-light-webfont.eot');
+    src: url('../assets/fonts/frutigerltstd-light-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/frutigerltstd-light-webfont.woff') format('woff'),
+         url('../assets/fonts/frutigerltstd-light-webfont.ttf') format('truetype'),
+         url('../assets/fonts/frutigerltstd-light-webfont.svg#FrutigerLTStd45Light') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+@font-face {
+    font-family: 'FrutigerLTStd56Italic';
+    src: url('../assets/fonts/frutigerltstd-italic-webfont.eot');
+    src: url('../assets/fonts/frutigerltstd-italic-webfont.eot?#iefix') format('embedded-opentype'),
+         url('../assets/fonts/frutigerltstd-italic-webfont.woff') format('woff'),
+         url('../assets/fonts/frutigerltstd-italic-webfont.ttf') format('truetype'),
+         url('../assets/fonts/frutigerltstd-italic-webfont.svg#FrutigerLTStd56Italic') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+html, body {
+  height: 100%;
+}
+
+#viewport, .oo-panel {
+  height: 100%;
+  width: 100%;
+  position: absolute; 
+}
+
+.oo-panel {
+  padding: 10%;
+  height: 63%;
+  width: 80%;  
+}
+
+.controls {
+  position: absolute;
+  bottom: 1em;
+  right: 1em;
+}
+
+.controls .button{
+  font-size: 3em;
+}
+
+.text-block {
+  width: 80%;
+  position: absolute; 
+  font-family: 'FrutigerLTStd45Light';
+  font-size: 1.6em;
+}
+
+.align-center {
+  text-align:center;
+  /*margin-left: 0;*/
+  /*margin-right: 0;*/
+}
+
+.valign-center {
+  /*vertical-align:middle;*/
+  /*margin-top: 0;*/
+  /*margin-bottom: 0;  */
+}
+
+.valign-center > * {
+  position: relative;
+  top: -50%
+}
+
+
+.blue {
+  color:rgb(44, 166, 255);
+}
+
+h1, h2, h3 {
+  font-family:'FrutigerLTStd56Italic';
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: bold; 
+  margin-bottom: 3%; 
+}
+
+h3 {
+  font-size: 1.6em;
+  font-weight: bold;
+}
+
+.statement {
+  font-size:5em;
+}
+
+h1.statement {
+  margin-bottom: 5%;
+}
+
+.bold {
+  font-weight:bold;
+}
+
+.stmt-pic {
+  max-width: 20%;
+}
+
+.bullets {
+  list-style: disc;
+  margin-left: 20px;
+}
+
+.bullets li {
+  margin-bottom: 5%;
+}
+
+
+@media only screen and (max-device-width: 720px) {
+  .text-block {
+    font-size: 0.9em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .statement {
+    font-size:3em;
+  }
+}
+
+@media only screen and (max-device-height: 720px) {
+  .text-block {
+    font-size: 0.9em;
+  }
+
+  h3 {
+    font-size: 1em;
+  }
+
+  h2 {
+    font-size: 1.8em;
+  }
+
+  .statement {
+    font-size:3em;
+  }
+}
+
