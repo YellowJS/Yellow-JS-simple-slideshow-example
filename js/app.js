@@ -7,14 +7,14 @@
         indexAction : function indexAction(params){
             var v = this.getViewport(), slide = (params.slide || 0), mainStage = v._stages.main.panels;
 
-            if (!mainStage || slide > mainStage.length - 1) {
+            if (!mainStage || !mainStage[slide]) {
                 oo.createPanelClass({
                     id: oo.generateId(),
                     init: function init () {
                         this.setTemplate(d.querySelector("#" + data[slide].tpl).text);
                         this.setData(data[slide].data);
                     }
-                }, {stage: 'main'});
+                }, {stage: 'main', pos: slide});
                 mainStage = v._stages.main.panels;
             }
             v.switchPanel(mainStage[slide]);
@@ -38,10 +38,7 @@
         oo.createElement('button', { el: '#prev', onrelease: goPrevious });
 
         d.addEventListener('keyup', function (e) {
-            if (e.keyCode == 37)
-                goPrevious();
-            else if (e.keyCode == 39)
-                goNext();
+            (37 == e.keyCode ? goPrevious : 39 == e.keyCode ? goNext : new Function())();
         });
     });
 })(document);
