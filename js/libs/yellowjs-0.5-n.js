@@ -1019,34 +1019,16 @@ oo = pline = (function (window) {
     
     //var Events = {};
     
-    var global = this;
-    
-    /**
-     * @internal create an object to wrap infos about the listener
-     * @param  {} listener [description]
-     * @return {[type]}          [description]
-     */
-    function buildListenerConf(listener) {
-        var listenerConf;
-        if (typeof listener == 'object' && listener.sc && listener.fn) {
-            listenerConf = {fn:listener.fn, sc: listener.sc};
-        } else {
-            listenerConf = {fn:listener, sc: global};
-        }
-
-        return listenerConf;
-    }
-
     var Events = oo.getNS('oo.core.mixins').Events = oo.Class({
 
         /**
          * get a singleton instance of the listeners array
          */
         _getListenersArray : function _getListenersArray () {
-            if (!this._listeners)
-                this._listeners = {};
+            if (!this._eventListeners)
+                this._eventListeners = {};
 
-            return this._listeners;
+            return this._eventListeners;
         },
         /**
          * register a listener for a given event name
@@ -1055,14 +1037,16 @@ oo = pline = (function (window) {
          * @param {function} listener  [description]
          */
         addListener : function addListener(eventName, listener){
+
+            if ('function' !== typeof listener)
+                throw "listener must be a function";
+
             var l = this._getListenersArray();
             if (!l[eventName]){
                 l[eventName] = [];
             }
 
-            var listenerConf = buildListenerConf(listener);
-
-            l[eventName].push(listenerConf);
+            l[eventName].push(listener);
 
         },
         /**
@@ -1074,28 +1058,26 @@ oo = pline = (function (window) {
          * @return {void}
          */
         removeListener : function removeListener(eventName, listener) {
+
+            if ('function' !== typeof listener)
+                throw "listener must be a function";
+
             var l = this._getListenersArray();
 
             if (l[eventName]){
-                var listenerConf = buildListenerConf(listener);
-                var index = l[eventName].indexOf(listenerConf);
-                if (-1 != index) {
+                var index = l[eventName].indexOf(listener);
+                if (-1 != index)
                     l[eventName].splice(index, 1);
-                }
             }
         },
+
         /**
-         * the folowing signature is deprecated - sender is not taken into account anymore
-         * trigerEvent(eventName, sender, params)
-         *
-         * use this one instead
-         * trigerEvent(eventName, params)
+         * triggers an event registered listeners will be called
+         * @param  {string} eventName the name of the event to trigger
+         * @param  {array}  params    params that will be provided to the listeners
+         * @return {void}
          */
         triggerEvent : function triggerEvent(eventName, params){
-            // backward compatibility
-            if ((typeof params != 'array') && 3 == arguments.length) {
-                params = arguments[2];
-            }
 
             var l = this._getListenersArray();
 
@@ -1103,7 +1085,7 @@ oo = pline = (function (window) {
                 for (var i = 0, len = l[eventName].length; i<len; i++) {
                     var listener = l[eventName][i];
 
-                    listener.fn.apply(listener.sc, params);
+                    listener.apply(this, params);
                 }
             }
         }
@@ -1378,16 +1360,16 @@ oo = pline = (function (window) {
             var that = this;
             //attach events to document
             document.addEventListener(Touch.EVENT_START, function(e){
-                that.startGesture.call(that, e);
+                that.startGesture(e);
             }, false);
             
             document.addEventListener(Touch.EVENT_MOVE, function(e){
                 e.preventDefault();
-                that.moveGesture.call(that, e);
+                that.moveGesture(e);
             }, false);
             
             document.addEventListener(Touch.EVENT_END, function(e){
-                that.stopGesture.call(that, e);
+                that.stopGesture(e);
             }, false);
         },
         getPos : function getPos(e){
@@ -1453,15 +1435,16 @@ oo = pline = (function (window) {
                 var deltaX = this.touchFlags.lastX - this.touchFlags.startX,
                     deltaY = this.touchFlags.lastY - this.touchFlags.startY;
 
-                if ( (Event.HAS_TOUCH && event.targetTouches.length == 1) || !Event.HAS_TOUCH ){
+                  // removed because it is useless and breaks the gesture detection
+//                if ( (Touch.HAS_TOUCH && e.targetTouches.length == 1) || !Touch.HAS_TOUCH ){
                     if (Math.abs(deltaX) > 30 && Math.abs(deltaY) < 100 ) {
-                        if ( deltaX > 0 ) {
+                        if ( deltaX < 0 ) {
                             this.fireEvent(that.touchFlags.el, "swipeLeft", true, true);
                         } else {
                             this.fireEvent(that.touchFlags.el, "swipeRight", true, true);
                         }
                     }
-                }
+//                }
             } else {
                //https://github.com/madrobby/zepto/blob/master/src/touch.js
                that.touchFlags.timeout = window.setTimeout(function(){
@@ -1987,7 +1970,7 @@ var oo = (function (oo) {
 
 
             if (!this._noCache) {
-                this._cacheProvider = new (oo.data.Provider.get(opt.cacheProvider))({name: 'flavius-cache__' + opt.name});
+                this._cacheProvider = new (oo.data.Provider.get(opt.cacheProvider))({name: 'yellowjs-cache__' + opt.name});
                 //this._cachePrefix = oo.generateId();
                 this._cachePrefix = this._url;
             }
@@ -3092,6 +3075,16 @@ var oo = (function (oo) {
                 delete options.onEnabled;
             }
 
+            // more consistant API
+            // if (options.hasOwnProperty('onenabled')) {
+            //     this.onEnabled = options.onenabled;
+            //     delete options.onEnabled;
+            // }
+
+            if(options.hasOwnProperty('scrollable')){
+                this.setScrollable(conf.scrollable);
+            }
+
             this._uiElements = {};
 
         },
@@ -3774,10 +3767,10 @@ var oo = (function (oo) {
         constructor: function constructor(conf) {
             var defaultConf = {
                 noStructure: true,
-                structure: '<ul>{{#data}}<li data-id="{{key}}" class="oo-list-item">{{tpl}}</li>{{/data}}</ul>',
+                structure: '<ul>{{#loop}}<li data-yellowjs-list-item-id="{{key}}" class="yellowjs-list-item">{{tpl}}</li>{{/loop}}</ul>',
                 identityField: 'key',
-                listItemCls: 'flavius-list-item',
-                listItemDataAttrib: 'data-list-item-id'
+                listItemCls: 'yellowjs-list-item',
+                listItemDataAttrib: 'data-yellowjs-list-item-id'
             };
 
             conf = oo.override(defaultConf, conf);
@@ -3790,25 +3783,18 @@ var oo = (function (oo) {
             this._listItemCls = conf.listItemCls;
             this._listItemDataAttrib = conf.listItemDataAttrib;
 
-
             List.Super.call(this, conf);
-
-            if(conf.scrollable){
-                this.setScrollable(conf.scrollable);
-            }
         },
         setTemplate : function setTemplate(tpl){
 
             if (!this._noStructure)
                 this._tpl = this._genTplWithStructure(tpl);
             else {
-                var testDiv = oo.view.Dom.createElement('div');
-                testDiv.html(tpl);
-                if (testDiv.children().length !== 1)
-                    throw "Invalid template - the template must have a single root node";
-                
-                testDiv = null;
-                this._tpl = '{{#data}}' + tpl + '{{/data}}';
+                var re = /.*\{\{#loop\}\}.*\{\{\/loop\}\}.*/;
+                if (!re.test(tpl)) {
+                    throw "Invalid template - template should have a \"loop\" pattern";
+                }
+                this._tpl = tpl;
             }
                 
 
@@ -3867,7 +3853,7 @@ var oo = (function (oo) {
             this._eventInitialized = true;
         },
         prepareData: function prepareData(data) {
-            return {'data': data};
+            return {'loop': data};
         },
         renderTo: function renderTo(target, data, tpl) {
             List.Super.prototype.renderTo.call(this, target, data, tpl);
@@ -4791,11 +4777,11 @@ var oo = (function (oo) {
                     that._createItems(opt);
                 }
 
-                this._model.fetch(function(datas){
-                   that._datas = datas;
+                this._model.fetch(function(){
+                   that._datas = this.getData();
                    that._total = that._datas.length;
                    if(that.list){
-                       that.list.appendHtml(that.list.render(datas));
+                       that.list.appendHtml(that.list.render(this.getData()));
                    }
 
                    callback();
@@ -5107,12 +5093,12 @@ var oo = (function (oo) {
 })(oo || {});/**
  * @namespace oo.view.scroll
  * @class IScroll
- * @requires oo.view.Dom, oo.core.Touch
+ * @requires oo.view.Dom
  */
 (function (oo) {
 
     // shorthand
-    var Dom = oo.view.Dom, Touch = oo.core.Touch, Scroll = oo.view.scroll.Scroll;
+    var Dom = oo.view.Dom, Scroll = oo.view.scroll.Scroll;
     
     var IScroll = oo.getNS('oo.view.scroll').IScroll = oo.Class(Scroll, {
         _scroll : null,
@@ -5126,20 +5112,18 @@ var oo = (function (oo) {
             delete opt.el;
              
             //test if el is an identifier, a dom Node or a oo.view.Dom
-            if("string" !== typeof this.el && "undefined" === typeof this.el.nodeType && !(this._isOoDom())){
+            var isNotOoDom = !(this.el instanceof Dom);
+            if("string" !== typeof this.el && "undefined" === typeof this.el.nodeType && isNotOoDom){
                 throw new Error("el must be a Dom object, a oo.view.Dom or an identifier");
             }
 
-            if(!(this.el instanceof oo.view.Dom)){
-                this.el = new oo.view.Dom(this.el);
+            if(isNotOoDom){
+                this.el = new Dom(this.el);
             }
 
             IScroll.Super.call(this);
 
             this._scroll = new iScroll(this.el.getId(), opt);
-        },
-        _isOoDom : function _isOoDom(){
-            return this.el instanceof(oo.view.Dom);
         },
         refresh : function refresh(){
             this._scroll.refresh();
