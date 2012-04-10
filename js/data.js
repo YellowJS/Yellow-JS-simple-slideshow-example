@@ -51,4 +51,87 @@ var data = [{
         'intro': 'YellowJs is a',
         'statement': 'Highly <span class="bold">customizable</span> <br><span class="bold">mobile</span> framework'
     }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'Custom design is offered by',
+        'statement': 'Templating',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-list",
+    "data": {
+        'title': 'Custom design...',
+        'bullets':[{
+            'statement': 'requires a custom markup'
+        },{
+            'statement': 'can\'t be generated automatically'
+        },{
+            'statement': 'with <span class="bold">templating</span>, concerns are properly separated'
+        }]
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'strongs concepts',
+        'statement': 'Easily handleable',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-list",
+    "data": {
+        'title': 'How we simplify robust concept?',
+        'bullets':[{
+            'statement': 'the "new" keyword is "banned" in the <span class="bold">"daily API"</span>'
+        },{
+            'statement': 'underlying class structure is clean and <span class="bold">extendable<span>'
+        },{
+            'statement': '<span class="bold">Event Model</span> / MVC / Mixins Ensure <span class="bold">flexibility</span> and are known by everyone'
+        }]
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'many "micro libraries" are well coded ;)',
+        'statement': 'Why don\'t use some',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-list",
+    "data": {
+        'title': 'Which library, why, what for?',
+        'bullets':[{
+            'statement': 'we choose <span class="bold">elegent library</span>, according to us'
+        },{
+            'statement': 'but you can easily implement the ones <span class="bold">you</span> have choosen'
+        }]
+    }
+},{
+    "tpl": "tpl-statement-pic",
+    "data": {
+        'intro': 'We have done "Memento App" - Ministère de la culture',
+        'statement': '',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-statement-pic",
+    "data": {
+        'intro': 'We have done this slideshow "engine" - Me ;)',
+        'statement': '',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-statement-pic",
+    "data": {
+        'intro': 'We have done "RA Altarea Cogedim" - LIGARIS',
+        'statement': '',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-statement-pic",
+    "data": {
+        'intro': 'We have done "LVMH MAG" - Groupe LVMH',
+        'statement': '',
+        'picSrc': ''
+    }
 }];
