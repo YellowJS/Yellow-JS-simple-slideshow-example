@@ -34,6 +34,12 @@
             r.load(baseUrl+ (getCurrentSlide() - 1));
         }
 
+        function onSwipe(e) {
+            ('swipeRight' == e.type ? goPrevious : 'swipeLeft' == e.type ? goNext : new Function())();
+        }
+        d.addEventListener('swipeLeft', onSwipe);
+        d.addEventListener('swipeRight', onSwipe);
+
         oo.createElement('button', { el: '#next', onrelease: goNext });
         oo.createElement('button', { el: '#prev', onrelease: goPrevious });
 
