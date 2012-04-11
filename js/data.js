@@ -1,6 +1,6 @@
 var data = [{
     "tpl": "tpl-title",
-    "data": {"title": "Hello YellowJS"}
+    "data": {"title": "Hello YellowJs"}
 },{
     "tpl": "tpl-list",
     "data": {
@@ -17,19 +17,19 @@ var data = [{
     "tpl": "tpl-statement",
     "data": {
         "intro": "WE WANT",
-        "statement": "Great mobile <br /><span class=\"bold\">user experience</span>"
-    }
-},{
-    "tpl": "tpl-statement",
-    "data": {
-        "intro": "WE WANT",
-        "statement": "100% cutom <br><span class=\"bold\">mobile design<span>"
+        "statement": "100% custom <br><span class=\"bold\">mobile design<span>"
     }
 },{
     "tpl": "tpl-statement",
     "data": {
         "intro": "WE WANT",
         "statement": "Industrial quality<br><span class=\"bold\">applications<span>"
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        "intro": "WE WANT",
+        "statement": "to <span class=\"bold\">code less</span><br/> but support <br/><span class=\"bold\">several devices</span>"
     }
 },{
     "tpl": "tpl-statement-pic",
@@ -65,7 +65,7 @@ var data = [{
         'bullets':[{
             'statement': 'requires a custom markup'
         },{
-            'statement': 'can\'t be generated automatically'
+            'statement': 'can hardly be generated fully automatically'
         },{
             'statement': 'with <span class="bold">templating</span>, concerns are properly separated'
         }]
@@ -82,11 +82,13 @@ var data = [{
     "data": {
         'title': 'How we simplify robust concept?',
         'bullets':[{
-            'statement': 'the "new" keyword is "banned" in the <span class="bold">"daily API"</span>'
+            'statement': 'The "new" keyword is "banned" in the <span class="bold">"daily API"</span>'
         },{
-            'statement': 'underlying class structure is clean and <span class="bold">extendable<span>'
+            'statement': 'Underlying class structure is clean and <span class="bold">extendable<span>'
         },{
-            'statement': '<span class="bold">Event Model</span> / MVC / Mixins Ensure <span class="bold">flexibility</span> and are known by everyone'
+            'statement': '<span class="bold">Event Model</span> / MVC / Mixins ensure <span class="bold">flexibility</span> and are known by everyone'
+        },{
+            'statement': 'YellowJs is good for quick developments but also for complex applications'
         }]
     }
 },{
@@ -101,63 +103,75 @@ var data = [{
     "data": {
         'title': 'Which library, why, what for?',
         'bullets':[{
-            'statement': 'we choose <span class="bold">elegent library</span>, according to us'
+            'statement': 'We choose <span class="bold">elegent library</span>, according to us'
         },{
-            'statement': 'but you can easily implement the ones <span class="bold">you</span> have choosen'
+            'statement': 'Lawnchair / Mustache / my.Class ...'
+        },{
+            'statement': 'But you can easily implement the ones <span class="bold">you</span> have choosen'
         }]
     }
 },{
     "tpl": "tpl-statement",
     "data": {
         'intro': 'What we can do?',
-        'statement': 'What we have done?',
-        'picSrc': ''
+        'statement': 'What we have done?'
     }
 },{
-    "tpl": "tpl-statement-pic",
+    "tpl": "tpl-statement-big-pic",
     "data": {
-        'intro': '"Memento App" - Ministère de la culture',
+        'intro': 'This slideshow "engine" - Me ;)',
         'statement': '',
-        'picSrc': ''
+        'picSrc': 'assets/yellowjs-prez.png'
     }
 },{
-    "tpl": "tpl-statement-pic",
+    "tpl": "tpl-statement-big-pic",
     "data": {
-        'intro': 'this slideshow "engine" - Me ;)',
+        'intro': 'Memento App - Ministère de la culture',
         'statement': '',
-        'picSrc': ''
+        'picSrc': 'assets/memento-app.png'
     }
 },{
-    "tpl": "tpl-statement-pic",
+    "tpl": "tpl-statement-big-pic",
     "data": {
-        'intro': '"RA Altarea Cogedim" - LIGARIS',
+        'intro': 'RA Altarea Cogedim - LIGARIS',
         'statement': '',
-        'picSrc': ''
+        'picSrc': 'assets/altarea.png'
     }
 },{
-    "tpl": "tpl-statement-pic",
+    "tpl": "tpl-statement-big-pic",
     "data": {
-        'intro': '"LVMH MAG" - Groupe LVMH',
+        'intro': 'LVMH MAG - Groupe LVMH',
         'statement': '',
-        'picSrc': ''
+        'picSrc': 'assets/lvmh.png'
     }
 },{
     "tpl": "tpl-list",
     "data": {
-        'title': 'YellowJs is',
+        'title': 'YellowJs is...',
         'bullets':[{
             'statement': 'not for developping games :('
         },{
-            'statement': 'missing some features yet, and still in beta'
+            'statement': 'still missing some features yet, and still in beta'
         },{
-            'statement': 'inspiration and motivation, to move away the limit of the beatiful design on mobile'
+            'statement': 'inspiration to move beyond the actual limit (we hope so)'
+        }]
+    }
+},{
+    "tpl": "tpl-list",
+    "data": {
+        'title': 'Who? Where? When?',
+        'bullets':[{
+            'statement': 'YellowJs is <span class="bold">published under New BSD</span> and is supported by Octave & Octave team'
+        },{
+            'statement': 'You can get it from github : <a href="https://github.com/YellowJs/yellowjs-framework">https://github.com/YellowJs/yellowjs-framework</a>'
+        },{
+            'statement': 'Still in beta mainly because it still lacks some funny features that i wanted to integrate<br />but in fact, already ready for production'
         }]
     }
 },{
     "tpl": "tpl-statement",
     "data": {
-        'intro': 'Thanks for listenning',
-        'statement': 'Questions?',
-        'picSrc': ''
+        'intro': 'Thank you for listening',
+        'statement': 'Questions?'
     }
 }];
