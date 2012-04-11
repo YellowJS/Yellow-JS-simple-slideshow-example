@@ -107,31 +107,57 @@ var data = [{
         }]
     }
 },{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'What we can do?',
+        'statement': 'What we have done?',
+        'picSrc': ''
+    }
+},{
     "tpl": "tpl-statement-pic",
     "data": {
-        'intro': 'We have done "Memento App" - Ministère de la culture',
+        'intro': '"Memento App" - Ministère de la culture',
         'statement': '',
         'picSrc': ''
     }
 },{
     "tpl": "tpl-statement-pic",
     "data": {
-        'intro': 'We have done this slideshow "engine" - Me ;)',
+        'intro': 'this slideshow "engine" - Me ;)',
         'statement': '',
         'picSrc': ''
     }
 },{
     "tpl": "tpl-statement-pic",
     "data": {
-        'intro': 'We have done "RA Altarea Cogedim" - LIGARIS',
+        'intro': '"RA Altarea Cogedim" - LIGARIS',
         'statement': '',
         'picSrc': ''
     }
 },{
     "tpl": "tpl-statement-pic",
     "data": {
-        'intro': 'We have done "LVMH MAG" - Groupe LVMH',
+        'intro': '"LVMH MAG" - Groupe LVMH',
         'statement': '',
+        'picSrc': ''
+    }
+},{
+    "tpl": "tpl-list",
+    "data": {
+        'title': 'YellowJs is',
+        'bullets':[{
+            'statement': 'not for developping games :('
+        },{
+            'statement': 'missing some features yet, and still in beta'
+        },{
+            'statement': 'inspiration and motivation, to move away the limit of the beatiful design on mobile'
+        }]
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'Thanks for listenning',
+        'statement': 'Questions?',
         'picSrc': ''
     }
 }];
