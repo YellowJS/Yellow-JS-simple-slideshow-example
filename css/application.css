@@ -168,6 +168,10 @@ h1.statement {
   max-width: 20%;
 }
 
+.stmt-big-pic {
+  max-width: 40%; 
+}
+
 .bullets {
   list-style: disc;
   margin-left: 20px;
