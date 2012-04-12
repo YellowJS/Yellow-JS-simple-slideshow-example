@@ -1,6 +1,6 @@
 var data = [{
     "tpl": "tpl-title",
-    "data": {"title": "Hello YellowJs"}
+    "data": {"title": "Hello <img src=\"assets/logo.png\">"}
 },{
     "tpl": "tpl-list",
     "data": {
@@ -119,7 +119,7 @@ var data = [{
 },{
     "tpl": "tpl-statement-big-pic",
     "data": {
-        'intro': 'This slideshow "engine" - Me ;)',
+        'intro': 'This slideshow "engine"',
         'statement': '',
         'picSrc': 'assets/yellowjs-prez.png'
     }
@@ -159,7 +159,7 @@ var data = [{
 },{
     "tpl": "tpl-list",
     "data": {
-        'title': 'Who? Where? When?',
+        'title': 'How? Where? When?',
         'bullets':[{
             'statement': 'YellowJs is <span class="bold">published under New BSD</span> and is supported by Octave & Octave team'
         },{
