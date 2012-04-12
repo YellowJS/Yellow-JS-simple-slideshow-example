@@ -5,7 +5,7 @@
 
     oo.createController('IndexController', {
         indexAction : function indexAction(params){
-            var v = this.getViewport(), slide = (params.slide || 0), mainStage = v._stages.main.panels;
+            var v = this.getViewport(), slide = (params.slide || 0), mainStage = v.getStage('main');
 
             if (!mainStage || !mainStage[slide]) {
                 oo.createPanelClass({
@@ -15,7 +15,7 @@
                         this.setData(data[slide].data);
                     }
                 }, {stage: 'main', pos: slide});
-                mainStage = v._stages.main.panels;
+                mainStage = v.getStage('main');
             }
             v.switchPanel(mainStage[slide]);
         }
