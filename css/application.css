@@ -108,6 +108,16 @@ html, body {
   font-size: 3em;
 }
 
+.float-left {
+  float: left;
+  margin-left: 1em;
+}
+
+ul.margin-left {
+  margin-left:50%;
+  text-align: left;
+}
+
 .text-block {
   width: 80%;
   position: absolute; 
@@ -150,10 +160,15 @@ h2 {
 h3 {
   font-size: 1.6em;
   font-weight: bold;
+  margin-bottom: 1em;
 }
 
 .statement {
   font-size:5em;
+}
+
+.statement img {
+  width: 5em;
 }
 
 h1.statement {
@@ -181,6 +196,10 @@ h1.statement {
   margin-bottom: 5%;
 }
 
+.content-pic {
+  margin-top: 0.5em;
+  max-width: 30em;
+}
 
 @media only screen and (max-device-width: 720px) {
   .text-block {
@@ -195,9 +214,15 @@ h1.statement {
     font-size: 1.8em;
   }
 
-  .statement {
+  .statement, .statement img {
     font-size:3em;
   }
+  
+  .statement img {
+    width: 3em;
+    max-width: 700px;
+  }
+
 }
 
 @media only screen and (max-device-height: 720px) {
@@ -213,8 +238,14 @@ h1.statement {
     font-size: 1.8em;
   }
 
-  .statement {
+  .statement, .statement img {
     font-size:3em;
   }
+
+  .statement img {
+    width: 3em;
+    max-width: 300px;
+  }
+
 }
 

@@ -82,9 +82,9 @@ var data = [{
     "data": {
         'title': 'How we simplify robust concept?',
         'bullets':[{
-            'statement': 'The "new" keyword is "banned" in the <span class="bold">"daily API"</span>'
+            'statement': 'The "new" keyword is "banned" in the <span class="bold">"daily API"</span><br /><img class="content-pic" src="assets/code/create-button.png">'
         },{
-            'statement': 'Underlying class structure is clean and <span class="bold">extendable<span>'
+            'statement': 'Underlying class structure is clean and <span class="bold">extendable<span><br /><img class="content-pic" src="assets/code/ajax-provider.png">'
         },{
             'statement': '<span class="bold">Event Model</span> / MVC / Mixins ensure <span class="bold">flexibility</span> and are known by everyone'
         },{
@@ -103,38 +103,59 @@ var data = [{
     "data": {
         'title': 'Which library, why, what for?',
         'bullets':[{
-            'statement': 'We choose <span class="bold">elegent library</span>, according to us'
+            'statement': 'We choose <span class="bold">elegent libraries</span>, according to us'
         },{
             'statement': 'Lawnchair / Mustache / my.Class ...'
         },{
-            'statement': 'But you can easily implement the ones <span class="bold">you</span> have choosen'
+            'statement': 'But you can easily implement the ones <span class="bold">you</span> have chosen<br /><img class="content-pic" src="assets/code/create-model.png">'
         }]
     }
 },{
     "tpl": "tpl-statement",
     "data": {
-        'intro': 'What we can do?',
-        'statement': 'What we have done?'
+        'intro': 'What we can do',
+        'statement': 'What we have done'
     }
 },{
-    "tpl": "tpl-statement-big-pic",
+    //"tpl": "tpl-statement-big-pic",
+    "tpl": "tpl-list-pic-left",
     "data": {
         'intro': 'This slideshow "engine"',
-        'statement': '',
+        'bullets': [{
+            'statement': 'Cross platform (smartphone, tablet, computers)'
+        },{
+            'statement': 'Use url hash to ensure deep linking'
+        },{
+            'statement': 'Only 50 lines of code'
+        }],
         'picSrc': 'assets/yellowjs-prez.png'
     }
 },{
-    "tpl": "tpl-statement-big-pic",
+    // "tpl": "tpl-statement-big-pic",
+    "tpl": "tpl-list-pic-left",
     "data": {
         'intro': 'Memento App - Ministère de la culture',
-        'statement': '',
+        'bullets': [{
+            'statement': 'Cross device (iOS / Android)'
+        },{
+            'statement': 'App build with PhoneGap'
+        },{
+            'statement': 'Let the user consult articles offline (for those marked as "favorite")'
+        }],
         'picSrc': 'assets/memento-app.png'
     }
 },{
-    "tpl": "tpl-statement-big-pic",
+    // "tpl": "tpl-statement-big-pic",
+    "tpl": "tpl-list-pic-left",
     "data": {
         'intro': 'RA Altarea Cogedim - LIGARIS',
-        'statement': '',
+        'bullets': [{
+            'statement': 'Build with PhoneGap'
+        },{
+            'statement': 'Custom design'
+        },{
+            'statement': 'Modern navigation paradigm'
+        }],
         'picSrc': 'assets/altarea.png'
     }
 },{
@@ -161,7 +182,7 @@ var data = [{
     "data": {
         'title': 'How? Where? When?',
         'bullets':[{
-            'statement': 'YellowJs is <span class="bold">published under New BSD</span> and is supported by Octave & Octave team'
+            'statement': 'YellowJs is published under the <span class="bold">New BSD</span> License and is supported by Octave & Octave team'
         },{
             'statement': 'You can get it from github : <a href="https://github.com/YellowJs/yellowjs-framework">https://github.com/YellowJs/yellowjs-framework</a>'
         },{
