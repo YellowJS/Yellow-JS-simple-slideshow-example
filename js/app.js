@@ -22,7 +22,7 @@
     });
 
     oo.bootstrap(function (oo) {
-        var r = oo.getRouter(), baseUrl = 'index/index/slide/'; r.init(); // if no configuration is provided to the router, the default route building method is [ControllerName]/[ActionName]/param1/value1/...
+        var r = oo.getRouter(), baseUrl = 'index/index/slide/'; r.init(); // init the router - if no configuration is provided to the router, the default route building method is [ControllerName]/[ActionName]/param1/value1/...
 
         function getCurrentSlide() {
             return parseInt(d.location.hash.replace('#' + baseUrl, ''), 10) || 0;   // extract the parameter "slide nummber" from the url hash
@@ -41,7 +41,7 @@
         d.addEventListener('swipeRight', onSwipe);
 
         oo.createElement('button', { el: '#next', onrelease: goNext });                                     // create buttons attached it to the nodes #next and #prev
-        oo.createElement('button', { el: '#prev', onrelease: goPrevious });                                 // also attache a callback for each one
+        oo.createElement('button', { el: '#prev', onrelease: goPrevious });                                 // also attach a callback for each one
 
         d.addEventListener('keyup', function (e) {                                                          // manage keyboard input
             (37 == e.keyCode ? goPrevious : 39 == e.keyCode ? goNext : new Function())();

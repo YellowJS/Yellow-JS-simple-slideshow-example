@@ -16,6 +16,12 @@ var data = [{
 },{
     "tpl": "tpl-statement",
     "data": {
+        'intro': 'YellowJS is a',
+        'statement': 'Highly <span class="bold">customizable</span> <br><span class="bold">mobile</span> framework'
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
         "intro": "WE WANT",
         "statement": "100% custom <br><span class=\"bold\">mobile design<span>"
     }
@@ -25,7 +31,7 @@ var data = [{
         "intro": "WE WANT",
         "statement": "Industrial quality<br><span class=\"bold\">applications<span>"
     }
-},{
+},/*{
     "tpl": "tpl-statement",
     "data": {
         "intro": "WE WANT",
@@ -45,13 +51,7 @@ var data = [{
         'statement': 'Open Source',
         'picSrc': 'assets/open-source.png'
     }
-},{
-    "tpl": "tpl-statement",
-    "data": {
-        'intro': 'YellowJs is a',
-        'statement': 'Highly <span class="bold">customizable</span> <br><span class="bold">mobile</span> framework'
-    }
-},{
+},*/{
     "tpl": "tpl-statement",
     "data": {
         'intro': 'Custom design is offered by',
@@ -82,14 +82,14 @@ var data = [{
     "data": {
         'title': 'How we simplify robust concept?',
         'bullets':[{
-            'statement': 'The "new" keyword is "banned" in the <span class="bold">"daily API"</span><br /><img class="content-pic" src="assets/code/create-button.png">'
+            'statement': 'Mainly works with configuration objects'
         },{
             'statement': 'Underlying class structure is clean and <span class="bold">extendable<span><br /><img class="content-pic" src="assets/code/ajax-provider.png">'
         },{
             'statement': '<span class="bold">Event Model</span> / MVC / Mixins ensure <span class="bold">flexibility</span> and are known by everyone'
-        },{
-            'statement': 'YellowJs is good for quick developments but also for complex applications'
-        }]
+        }/*,{
+            'statement': 'YellowJS is good for quick developments but also for complex applications'
+        }*/]
     }
 },{
     "tpl": "tpl-statement",
@@ -127,6 +127,8 @@ var data = [{
             'statement': 'Use url hash to ensure deep linking'
         },{
             'statement': 'Only 50 lines of code'
+        },{
+            'statement': 'Sources available on <a href="https://github.com/YellowJS/Yellow-JS-simple-slideshow-example">GitHub</a>'
         }],
         'picSrc': 'assets/yellowjs-prez.png'
     }
@@ -166,9 +168,15 @@ var data = [{
         'picSrc': 'assets/lvmh.png'
     }
 },{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'YellowJS is...',
+        'statement': '<span style="font-size: .6em;">inspiration to move <span style="font-weight: bold;">beyond</span> the <span style="font-weight: bold;">actual limit</span> <span style="font-size: 0.5em;">(we hope so)</span></span>'
+    }
+},/*{
     "tpl": "tpl-list",
     "data": {
-        'title': 'YellowJs is...',
+        'title': 'YellowJS is...',
         'bullets':[{
             'statement': 'not for developping games :('
         },{
@@ -177,12 +185,12 @@ var data = [{
             'statement': 'inspiration to move beyond the actual limit (we hope so)'
         }]
     }
-},{
+},*/{
     "tpl": "tpl-list",
     "data": {
         'title': 'How? Where? When?',
         'bullets':[{
-            'statement': 'YellowJs is published under the <span class="bold">New BSD</span> License and is supported by Octave & Octave team'
+            'statement': 'YellowJS is published under the <span class="bold">New BSD</span> License and is supported by Octave & Octave team'
         },{
             'statement': 'You can get it from github : <a href="https://github.com/YellowJs/yellowjs-framework">https://github.com/YellowJs/yellowjs-framework</a>'
         },{
@@ -192,7 +200,7 @@ var data = [{
 },{
     "tpl": "tpl-statement",
     "data": {
-        'intro': 'Thank you for listening',
-        'statement': 'Questions?'
+        'intro': '<a href="/">&lt;back to website</a> | <a href="https://github.com/YellowJS">Download&gt;</a>',
+        'statement': 'That\'s all folks'
     }
 }];
