@@ -8,16 +8,22 @@ var data = [{
         'bullets':[{
             'statement': 'Work at Octave & Octave (<a href="http://octaveoctave.com">http://octaveoctave.com</a>)'
         },{
-            'statement': 'In charge of the frontdev team'
+            'statement': 'In charge of the frontdev / mobile dev team'
         },{
             'statement': 'Contact me : <a href="mailto:md@octaveoctave.com">md@octaveoctave.com</a> | <a href="http://twitter.com/freakdev">@freakdev</a>'
         }]
     }
 },{
-    "tpl": "tpl-statement",
+    "tpl": "tpl-list",
     "data": {
-        'intro': 'YellowJS is a',
-        'statement': 'Highly <span class="bold">customizable</span> <br><span class="bold">mobile</span> framework'
+        'title': 'A (bit more than a) year ago at ParisJS #5,',
+        'bullets':[{
+            'statement': 'feedback about Sencha Touch (1.0)'
+        },{
+            'statement': 'full-stack framework are hard to customize'
+        },{
+            'statement': 'several micro libraries can lead to insconsistency'
+        }]
     }
 },{
     "tpl": "tpl-statement",
@@ -29,7 +35,19 @@ var data = [{
     "tpl": "tpl-statement",
     "data": {
         "intro": "WE WANT",
-        "statement": "Industrial quality<br><span class=\"bold\">applications<span>"
+        "statement": "<span class=\"bold\">Reusable</span> code<br />and easily <span class=\"bold\">maintainable</span> apps"
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': 'YellowJS is a',
+        'statement': 'Highly <span class="bold">customizable</span> <br><span class="bold">mobile</span> framework'
+    }
+},{
+    "tpl": "tpl-statement",
+    "data": {
+        'intro': '',
+        'statement': 'Let‘s write some code'
     }
 },/*{
     "tpl": "tpl-statement",
@@ -51,7 +69,7 @@ var data = [{
         'statement': 'Open Source',
         'picSrc': 'assets/open-source.png'
     }
-},*/{
+},{
     "tpl": "tpl-statement",
     "data": {
         'intro': 'Custom design is offered by',
@@ -87,9 +105,9 @@ var data = [{
             'statement': 'Underlying class structure is clean and <span class="bold">extendable<span><br /><img class="content-pic" src="assets/code/ajax-provider.png">'
         },{
             'statement': '<span class="bold">Event Model</span> / MVC / Mixins ensure <span class="bold">flexibility</span> and are known by everyone'
-        }/*,{
+        }/ *,{
             'statement': 'YellowJS is good for quick developments but also for complex applications'
-        }*/]
+        }* /]
     }
 },{
     "tpl": "tpl-statement",
@@ -146,7 +164,7 @@ var data = [{
         }],
         'picSrc': 'assets/memento-app.png'
     }
-},{
+},*/{
     // "tpl": "tpl-statement-big-pic",
     "tpl": "tpl-list-pic-left",
     "data": {
@@ -160,7 +178,7 @@ var data = [{
         }],
         'picSrc': 'assets/altarea.png'
     }
-},{
+},/*{
     "tpl": "tpl-statement-big-pic",
     "data": {
         'intro': 'LVMH MAG - Groupe LVMH',
@@ -173,7 +191,7 @@ var data = [{
         'intro': 'YellowJS is...',
         'statement': '<span style="font-size: .6em;">inspiration to move <span style="font-weight: bold;">beyond</span> the <span style="font-weight: bold;">actual limit</span> <span style="font-size: 0.5em;">(we hope so)</span></span>'
     }
-},/*{
+},{
     "tpl": "tpl-list",
     "data": {
         'title': 'YellowJS is...',
@@ -200,7 +218,7 @@ var data = [{
 },{
     "tpl": "tpl-statement",
     "data": {
-        'intro': '<a href="/">&lt;back to website</a> | <a href="https://github.com/YellowJS">Download&gt;</a>',
-        'statement': 'That\'s all folks'
+        'intro': 'Thanks for listening',
+        'statement': 'Questions ?'
     }
 }];
