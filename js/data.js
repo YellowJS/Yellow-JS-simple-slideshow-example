@@ -150,7 +150,7 @@ var data = [{
         }],
         'picSrc': 'assets/yellowjs-prez.png'
     }
-},{
+},*/{
     // "tpl": "tpl-statement-big-pic",
     "tpl": "tpl-list-pic-left",
     "data": {
